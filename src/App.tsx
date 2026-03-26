@@ -1,13 +1,11 @@
-import HomePage from '@/pages/homepage/HomePage'
-import PokemonPage from '@/pages/PokemonPage'
 import { Outlet } from 'react-router'
+import Navbar from './components/layout/navbar'
 
 function App() {
   return (
     <div>
-      <HomePage />
-      <PokemonPage/>
-      <Outlet />
+      <Navbar/>
+      <Outlet/>
     </div>
   )
 }

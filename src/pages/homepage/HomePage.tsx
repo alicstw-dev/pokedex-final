@@ -1,12 +1,10 @@
 import Footer from '@/components/layout/footer'
-import Navbar from '@/components/layout/navbar'
 import HeroSection from '@/pages/homepage/hero-section'
 import FeaturedPokemon from '@/pages/homepage/featured-pokemon' // Nova seção
 
 function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <main className="flex-grow">
         <HeroSection />
         <FeaturedPokemon />
