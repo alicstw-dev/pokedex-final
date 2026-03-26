@@ -4,7 +4,7 @@ import { Search } from 'lucide-react'
 
 export default function Navbar() {
   return (
-    <header className="border-b bg-primary">
+    <header className="sticky top-0 border-b border-border bg-primary">
       <div className="container-main flex items-center justify-between py-3">
         {/* logo */}
         <Link to="/" className="flex items-center gap-2 font-bold text-xl">
@@ -14,7 +14,7 @@ export default function Navbar() {
         </Link>
 
         {/* menu */}
-        <nav className="flex items-center gap-6 text-sm font-medium">
+        <nav className="flex items-center gap-6 text-lg font-medium">
           <Link to="/" className="hover:text-accent text-primary-foreground transition-colors">
             Home
           </Link>
@@ -37,7 +37,8 @@ export default function Navbar() {
         {/* botão */}
         <Button
           variant="secondary"
-          className="flex items-center gap-2 bg-background text-primary hover:bg-muted-foreground"
+          size='lg'
+          className="flex items-center gap-2 bg-background text-primary"
           asChild
         >
           <Link to="/pokedex">

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t bg-muted">
+    <footer>
       <div className="container-main py-6 text-center text-sm text-muted-foreground">
 
         <p>

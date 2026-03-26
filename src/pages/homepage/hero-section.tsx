@@ -14,7 +14,7 @@ function HeroSection() {
           </span>
         </div>
 
-        <h1 className="mt-6 text-5xl text-balance font-bold text-foreground tracking-tight">
+        <h1 className="mt-6 text-5xl text-balance font-extrabold text-foreground tracking-tight">
           Descubra, pesquise e monte sua{' '}
           <span className="text-primary">Pokédex</span> completa
         </h1>

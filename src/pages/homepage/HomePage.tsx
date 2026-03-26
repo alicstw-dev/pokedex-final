@@ -8,10 +8,7 @@ function HomePage() {
     <div>
 
       <Navbar />
-
-      <main className="flex-1">
         <HeroSection />
-      </main>
 
       <Footer />
 
