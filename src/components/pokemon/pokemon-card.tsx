@@ -1,5 +1,5 @@
 import { Star } from 'lucide-react'
-import { useNavigate } from 'react-router' // ou react-router-dom
+import { useNavigate } from 'react-router' 
 
 interface PokemonCardProps {
   name: string
@@ -24,9 +24,9 @@ export default function PokemonCard({ name, id, image, types = [] }: PokemonCard
     }
   }
 
+
   const handleGoToDetails = () => {
-    // No futuro: navigate(`/pokemon/${id}`)
-    alert(`🔍 Tela de Detalhes em desenvolvimento para: ${name.toUpperCase()}`)
+    navigate(`/pokedex/${id}`)
   }
 
   return (
