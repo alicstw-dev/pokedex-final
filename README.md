@@ -16,7 +16,6 @@ Aplicação web SPA que consome a PokeAPI para exibir dados de pokémons.
 - busca
 - favoritos
 - autenticação
-- criação de time
 
 ## como rodar
 
