@@ -77,14 +77,14 @@ function HeroSection() {
         {/* IMAGEM */}
         <div className="relative flex justify-center items-center lg:justify-end">
 
-          <div className="absolute w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] bg-primary/20 rounded-full blur-[80px]" />
+          <div className="absolute w-75 h-75 lg:w-112.5 lg:h-112.5 bg-primary/20 rounded-full blur-[80px]" />
 
           <div className="relative group cursor-pointer">
 
             <img
               src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
               alt="Pikachu Destaque"
-              className="w-full max-w-[320px] lg:max-w-[480px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-all duration-500 group-hover:scale-105 group-hover:-rotate-3"
+              className="w-full max-w-[320px] lg:max-w-120 drop-shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-all duration-500 group-hover:scale-105 group-hover:-rotate-3"
             />
 
             <div className="absolute -top-4 -right-4 bg-background border-2 border-primary px-4 py-2 rounded-2xl shadow-xl rotate-12 hidden lg:block">

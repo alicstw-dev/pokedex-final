@@ -92,7 +92,7 @@ export default function PokemonPage() {
     <div className="min-h-screen bg-[#FDFDFD] flex flex-col selection:bg-primary/10">
 
       {/* HEADER ULTRA-CLEAN */}
-      <header className={`sticky top-[57px] z-40 w-full transition-all duration-500 bg-white/80 backdrop-blur-xl border-b border-slate-100 ${
+      <header className={`sticky top-14.25 z-40 w-full transition-all duration-500 bg-white/80 backdrop-blur-xl border-b border-slate-100 ${
         isScrolled ? 'py-4 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]' : 'py-12'
       }`}>
         <div className="container-main max-w-6xl">
@@ -167,12 +167,12 @@ export default function PokemonPage() {
       </header>
 
       {/* CONTEÚDO PRINCIPAL CENTRALIZADO */}
-      <main className="flex-grow container-main py-16 flex flex-col items-center">
+      <main className="grow container-main py-16 flex flex-col items-center">
         {loading ? (
           <div className="flex flex-col items-center py-20 gap-4">
             <div className="relative">
                 <Loader2 className="size-12 animate-spin text-primary/20" />
-                <Loader2 className="size-12 animate-spin text-primary absolute inset-0 [animation-duration:1.5s]" />
+                <Loader2 className="size-12 animate-spin text-primary absolute inset-0 animation-duration-[1.5s]" />
             </div>
             <p className="font-bold text-slate-400 tracking-tight text-sm uppercase">Sincronizando Pokémons...</p>
           </div>
