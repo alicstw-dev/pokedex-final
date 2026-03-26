@@ -3,7 +3,7 @@ import { Outlet } from "react-router"
 
 function App() {
  return (
-  <div className="flex items-center justify-center h-screen">
+  <div>
    <HomePage/>
    <Outlet/>
   </div>

@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { Link } from 'react-router'
 
-
 function HeroSection() {
   return (
     <section className="bg-card bg-soft-radial">
@@ -35,7 +34,7 @@ function HeroSection() {
 
         <div className="mt-16 flex items-center gap-8 text-sm text-muted-foreground">
           <div className="flex flex-col gap-1">
-            <span className="text-foreground font-bold text-2xl">1000+</span>
+            <span className="text-foreground font-bold text-2xl">1000 +</span>
             <span>Pokémons</span>
           </div>
 
