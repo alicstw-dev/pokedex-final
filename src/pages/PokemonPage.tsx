@@ -51,7 +51,7 @@ export default function PokemonPage() {
     async function fetchData() {
       try {
         setLoading(true)
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500")
         const data = await response.json()
         const detailPromises = data.results.map((p: any) => fetch(p.url).then(res => res.json()))
         const details = await Promise.all(detailPromises)
