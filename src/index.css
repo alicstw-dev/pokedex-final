@@ -5,95 +5,107 @@
 
 @custom-variant dark (&:is(.dark *));
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: oklch(0.922 0 0);
-  --code-bg: #f4f3ec;
-  --accent: oklch(0.97 0 0);
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* cores base */
+  --background: #f5f7fb;
+  --foreground: #1f2937;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* cards */
+  --card: #ffffff;
+  --card-foreground: #111827;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  /* popover */
+  --popover: #ffffff;
+  --popover-foreground: #111827;
 
-  --background: oklch(1 0 0);
+  /* vermelho pokedex */
+  --primary: #ef4444;
+  --primary-foreground: #ffffff;
 
-  --foreground: oklch(0.145 0 0);
+  /* azul pokemon */
+  --secondary: #3b82f6;
+  --secondary-foreground: #ffffff;
 
-  --card: oklch(1 0 0);
+  /* cinza suave */
+  --muted: #eef2f7;
+  --muted-foreground: #6b7280;
 
-  --card-foreground: oklch(0.145 0 0);
+  /* amarelo pikachu */
+  --accent: #facc15;
+  --accent-foreground: #1f2937;
 
-  --popover: oklch(1 0 0);
+  /* erro */
+  --destructive: #dc2626;
 
-  --popover-foreground: oklch(0.145 0 0);
+  /* bordas */
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #ef4444;
 
-  --primary: oklch(0.205 0 0);
+  /* gráficos */
+  --chart-1: #ef4444;
+  --chart-2: #3b82f6;
+  --chart-3: #22c55e;
+  --chart-4: #facc15;
+  --chart-5: #a855f7;
 
-  --primary-foreground: oklch(0.985 0 0);
+  /* sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2937;
 
-  --secondary: oklch(0.97 0 0);
+  --sidebar-primary: #ef4444;
+  --sidebar-primary-foreground: #ffffff;
 
-  --secondary-foreground: oklch(0.205 0 0);
+  --sidebar-accent: #fef3c7;
+  --sidebar-accent-foreground: #92400e;
 
-  --muted: oklch(0.97 0 0);
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #ef4444;
 
-  --muted-foreground: oklch(0.556 0 0);
+  /* raio */
+  --radius: 0.75rem;
+}
 
-  --accent-foreground: oklch(0.205 0 0);
+.dark {
 
-  --destructive: oklch(0.577 0.245 27.325);
+  --background: #0f172a;
+  --foreground: #f8fafc;
 
-  --input: oklch(0.922 0 0);
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
 
-  --ring: oklch(0.708 0 0);
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
 
-  --chart-1: oklch(0.87 0 0);
+  --primary: #f87171;
+  --primary-foreground: #111827;
 
-  --chart-2: oklch(0.556 0 0);
+  --secondary: #60a5fa;
+  --secondary-foreground: #111827;
 
-  --chart-3: oklch(0.439 0 0);
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
 
-  --chart-4: oklch(0.371 0 0);
+  --accent: #fde047;
+  --accent-foreground: #111827;
 
-  --chart-5: oklch(0.269 0 0);
+  --destructive: #ef4444;
 
-  --radius: 0.625rem;
+  --border: #334155;
+  --input: #334155;
+  --ring: #f87171;
 
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: #020617;
+  --sidebar-foreground: #f8fafc;
 
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #ef4444;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8fafc;
 
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-
-  --sidebar-accent: oklch(0.97 0 0);
-
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-
-  --sidebar-border: oklch(0.922 0 0);
-
-  --sidebar-ring: oklch(0.708 0 0)
+  --sidebar-border: #334155;
+  --sidebar-ring: #f87171;
 }
 
 @media (prefers-color-scheme: dark) {

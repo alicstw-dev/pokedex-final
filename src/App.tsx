@@ -1,4 +1,4 @@
-import HomePage from "@/pages/HomePage"
+import HomePage from "@/pages/homepage/HomePage"
 import { Outlet } from "react-router"
 
 function App() {
