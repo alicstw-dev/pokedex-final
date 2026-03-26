@@ -260,3 +260,19 @@ code {
     @apply bg-background text-foreground;}
   html {
     @apply font-sans;}}
+
+    @layer components {
+	.container-main {
+		@apply max-w-7xl mx-auto px-4 lg:px-8;
+	}
+}
+
+@layer utilities {
+	.bg-soft-radial {
+		background-image: radial-gradient(
+			ellipse at top,
+			oklch(from var(--color-primary) 1 c h / 0.08),
+			transparent 60%
+		);
+	}
+}
