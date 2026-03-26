@@ -40,7 +40,7 @@ export default function PokemonList({ pokemons, loading }: PokemonListProps) {
           name={pokemon.name} 
           id={pokemon.id} 
           image={pokemon.image} 
-          types={pokemon.types} // Agora passa os tipos para o card
+          //types={pokemon.types} // Agora passa os tipos para o card
         />
       ))}
     </div>
