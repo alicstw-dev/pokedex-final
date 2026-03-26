@@ -1,8 +1,14 @@
 import PokemonCard from "./pokemon-card"
 
+interface Pokemon {
+  id: number
+  name: string
+  image: string
+}
+
 interface PokemonListProps {
-  pokemons: any[];
-  loading: boolean;
+  pokemons: Pokemon[]
+  loading: boolean
 }
 
 export default function PokemonList({ pokemons, loading }: PokemonListProps) {

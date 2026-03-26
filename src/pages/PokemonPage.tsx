@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Search } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import PokemonList from '@/components/pokemon/pokemon-list'
+import { getPokemons } from '@/infra/http/fetch-api'
 
 export default function PokemonPage() {
   const [allPokemons, setAllPokemons] = useState<any[]>([])
@@ -9,18 +10,12 @@ export default function PokemonPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function getPokemons() {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
-      const data = await response.json()
-      const formatted = data.results.map((p: any, index: number) => ({
-        name: p.name,
-        id: index + 1,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`
-      }))
+    const fetchPokemons = async () => {
+      const {formatted} = await getPokemons()
       setAllPokemons(formatted)
       setLoading(false)
     }
-    getPokemons()
+    fetchPokemons()
   }, [])
 
   const filtered = allPokemons.filter(p => p.name.toLowerCase().includes(search.toLowerCase()))
