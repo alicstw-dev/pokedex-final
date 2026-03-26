@@ -1,51 +1,36 @@
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router' // Mantendo seu import
 import { Button } from '@/components/ui/button'
-import { Search } from 'lucide-react'
+import { LogOut } from 'lucide-react'
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Se tiver lógica de auth, limpe aqui
+    navigate('/'); // Direciona para home
+  }
+
   return (
-    <header className="sticky top-0 border-b border-border bg-primary">
+    <header className="sticky top-0 z-50 border-b border-border bg-primary w-full">
       <div className="container-main flex items-center justify-between py-3">
-        {/* logo */}
         <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-          <span className="bg-background text-primary px-2 py-1 rounded-md">
+          <span className="bg-background text-primary px-2 py-1 rounded-md transition-transform hover:scale-105">
             Pokédex
           </span>
         </Link>
 
-        {/* menu */}
-        <nav className="flex items-center gap-6 text-lg font-medium">
+        <nav className="flex items-center gap-6 text-base font-medium">
           <Link to="/" className="hover:text-accent text-primary-foreground transition-colors">
             Home
           </Link>
-
-          <Link
-            to="/pokedex"
-            className="hover:text-accent text-primary-foreground transition-colors"
-          >
+          <Link to="/pokedex" className="hover:text-accent text-primary-foreground transition-colors">
             Pokémons
           </Link>
-
-          <Link
-            to="/favorites"
-            className="hover:text-accent text-primary-foreground transition-colors"
-          >
+          <Link to="/favorites" className="hover:text-accent text-primary-foreground transition-colors">
             Favoritos
           </Link>
         </nav>
 
-        {/* botão */}
-        <Button
-          variant="secondary"
-          size='lg'
-          className="flex items-center gap-2 bg-background text-primary"
-          asChild
-        >
-          <Link to="/pokedex">
-            Buscar
-            <Search className="size-4" />
-          </Link>
-        </Button>
       </div>
     </header>
   )
