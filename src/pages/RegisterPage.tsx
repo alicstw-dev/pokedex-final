@@ -3,7 +3,7 @@ import { User, Lock } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { RegisterUser } from '@/features/services/register.service.ts'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 export default function RegisterPage() {
   const [username, setUsername] = useState('')
@@ -23,7 +23,6 @@ export default function RegisterPage() {
       console.log('Token:', response.token)
 
       navigate('/pokedex')
-
     } catch (error) {
       console.error('Erro ao registrar usuário', error)
     } finally {
@@ -34,7 +33,6 @@ export default function RegisterPage() {
   return (
     <div className="flex-1 bg-background flex mt-40 justify-center min-h-screen px-6">
       <div className="w-full max-w-md ">
-        
         <form
           onSubmit={handleRegister}
           className="bg-card p-8 rounded-xl border border-border min-h-95 flex flex-col"
@@ -42,7 +40,6 @@ export default function RegisterPage() {
           <p className="text-2xl font-semibold">Criar Conta</p>
 
           <div className="space-y-6 mt-10">
-
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
               <Input
@@ -68,9 +65,17 @@ export default function RegisterPage() {
               {loading ? 'Registrando...' : 'Registrar'}
             </Button>
 
+            <div className="mt-6 text-center text-sm text-muted-foreground">
+              Já possui conta?{' '}
+              <Link
+                to="/login"
+                className="text-primary font-medium hover:underline"
+              >
+                Entrar
+              </Link>
+            </div>
           </div>
         </form>
-
       </div>
     </div>
   )

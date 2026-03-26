@@ -3,7 +3,7 @@ import { User, Lock } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { LoginUser } from '@/features/services/login.service'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
@@ -68,6 +68,16 @@ export default function LoginPage() {
             <Button type="submit" className="w-full h-12" disabled={loading}>
               {loading ? 'Entrando...' : 'Entrar'}
             </Button>
+
+            <div className="mt-6 text-center text-sm text-muted-foreground">
+                Não possui conta?{" "}
+                <Link
+                    to="/register"
+                    className="text-primary font-medium hover:underline"
+                >
+                    Criar conta
+                </Link>
+            </div>
 
           </div>
         </form>
