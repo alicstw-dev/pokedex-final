@@ -1,14 +1,12 @@
-import { Link, useNavigate } from 'react-router' // Mantendo seu import
-import { Button } from '@/components/ui/button'
-import { LogOut } from 'lucide-react'
+import { Link, /*useNavigate*/ } from 'react-router' 
 
 export default function Navbar() {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
-  const handleLogout = () => {
+  //const handleLogout = () => {
     // Se tiver lógica de auth, limpe aqui
-    navigate('/'); // Direciona para home
-  }
+   // navigate('/'); // Direciona para home
+  //}
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-primary w-full">
@@ -19,14 +17,14 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="flex items-center gap-6 text-base font-medium">
-          <Link to="/" className="hover:text-accent text-primary-foreground transition-colors">
+        <nav className="flex items-center gap-6 text-sm font-bold uppercase tracking-wider">
+          <Link to="/" className="text-white hover:text-accent transition-colors">
             Home
           </Link>
-          <Link to="/pokedex" className="hover:text-accent text-primary-foreground transition-colors">
+          <Link to="/pokedex" className="text-white hover:text-accent transition-colors">
             Pokémons
           </Link>
-          <Link to="/favorites" className="hover:text-accent text-primary-foreground transition-colors">
+          <Link to="/favorites" className="text-white hover:text-accent transition-colors">
             Favoritos
           </Link>
         </nav>
