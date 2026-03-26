@@ -5,7 +5,7 @@ import FeaturedPokemon from '@/pages/homepage/featured-pokemon' // Nova seção
 function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
+      <main className="grow">
         <HeroSection />
         <FeaturedPokemon />
         

@@ -24,7 +24,7 @@ export default function RegisterPage() {
         {/* FORM */}
         <form
           onSubmit={handleRegister}
-          className="bg-card p-8 rounded-xl border border-border min-h-[380px] flex flex-col"
+          className="bg-card p-8 rounded-xl border border-border min-h-95 flex flex-col"
         >
           <p className="text-2xl font-semibold">Criar Conta</p>
 
