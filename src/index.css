@@ -19,7 +19,7 @@
   --popover-foreground: #111827;
 
   /* vermelho pokedex */
-  --primary: #ef4444;
+  --primary: #c21010;
   --primary-foreground: #ffffff;
 
   /* azul pokemon */
@@ -246,7 +246,7 @@ code {
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+  --destructive: oklch(51.86% 0.20224 27.829);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
@@ -266,14 +266,18 @@ code {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;}
-  body {
-    @apply bg-background text-foreground;}
-  html {
-    @apply font-sans;}}
+	* {
+		@apply border-border outline-ring/50;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+	html {
+		@apply font-sans;
+	}
+}
 
-    @layer components {
+@layer components {
 	.container-main {
 		@apply max-w-7xl mx-auto px-4 lg:px-8;
 	}

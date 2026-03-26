@@ -1,13 +1,15 @@
-import HomePage from "@/pages/homepage/HomePage"
-import { Outlet } from "react-router"
+import HomePage from '@/pages/homepage/HomePage'
+import PokemonPage from '@/pages/PokemonPage'
+import { Outlet } from 'react-router'
 
 function App() {
- return (
-  <div className="flex items-center justify-center h-screen">
-   <HomePage/>
-   <Outlet/>
-  </div>
- )
+  return (
+    <div>
+      <HomePage />
+      <PokemonPage/>
+      <Outlet />
+    </div>
+  )
 }
 
 export default App
