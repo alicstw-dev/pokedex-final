@@ -5,6 +5,7 @@ import PokemonPage from '@/pages/PokemonPage'
 import RegisterPage from '@/pages/RegisterPage'
 import PokemonDetailPage from '@/pages/PokemonDetailPage' // Importe a nova página
 import App from '@/App'
+import LoginPage from '@/pages/LoginPage'
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         path: 'register',
         Component: RegisterPage,
       },
+      {
+        path: 'login',
+        Component: LoginPage
+      }
     ],
   },
 ])

@@ -2,29 +2,31 @@ import { useState } from 'react'
 import { User, Lock } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
-import { RegisterUser } from '@/features/services/register.service.ts'
+import { LoginUser } from '@/features/services/login.service'
 import { Link, useNavigate } from 'react-router'
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
+
   const navigate = useNavigate()
 
-  const handleRegister = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
       setLoading(true)
 
-      const response = await RegisterUser(username, password)
+      const response = await LoginUser(username, password)
 
-      console.log('Usuário registrado:', response.user)
+      console.log('Usuário logado:', response.user)
       console.log('Token:', response.token)
 
       navigate('/pokedex')
+
     } catch (error) {
-      console.error('Erro ao registrar usuário', error)
+      console.error('Erro ao fazer login', error)
     } finally {
       setLoading(false)
     }
@@ -32,14 +34,16 @@ export default function RegisterPage() {
 
   return (
     <div className="flex-1 bg-background flex mt-40 justify-center min-h-screen px-6">
-      <div className="w-full max-w-md ">
+      <div className="w-full max-w-md">
+        
         <form
-          onSubmit={handleRegister}
+          onSubmit={handleLogin}
           className="bg-card p-8 rounded-xl border border-border min-h-95 flex flex-col"
         >
-          <p className="text-2xl font-semibold">Criar Conta</p>
+          <p className="text-2xl font-semibold">Entrar</p>
 
           <div className="space-y-6 mt-10">
+
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground size-4" />
               <Input
@@ -62,20 +66,22 @@ export default function RegisterPage() {
             </div>
 
             <Button type="submit" className="w-full h-12" disabled={loading}>
-              {loading ? 'Registrando...' : 'Registrar'}
+              {loading ? 'Entrando...' : 'Entrar'}
             </Button>
 
             <div className="mt-6 text-center text-sm text-muted-foreground">
-              Já possui conta?{' '}
-              <Link
-                to="/login"
-                className="text-primary font-medium hover:underline"
-              >
-                Entrar
-              </Link>
+                Não possui conta?{" "}
+                <Link
+                    to="/register"
+                    className="text-primary font-medium hover:underline"
+                >
+                    Criar conta
+                </Link>
             </div>
+
           </div>
         </form>
+
       </div>
     </div>
   )

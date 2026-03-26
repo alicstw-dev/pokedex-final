@@ -73,7 +73,7 @@ export default function PokemonDetailPage() {
           
           {/* COLUNA DA IMAGEM */}
           <div className="flex flex-col gap-6">
-            <div className={`relative flex-1 min-h-[450px] rounded-[56px] overflow-hidden shadow-2xl bg-gradient-to-br ${config.gradient} flex items-center justify-center group`}>
+            <div className={`relative flex-1 min-h-112.5 rounded-[56px] overflow-hidden shadow-2xl bg-linear-to-br ${config.gradient} flex items-center justify-center group`}>
                
                {/* ID NO TOPO-ESQUERDO */}
                <div className="absolute top-8 left-10">
@@ -93,7 +93,7 @@ export default function PokemonDetailPage() {
                <img 
                 src={pokemon.sprites.other['official-artwork'].front_default} 
                 alt={pokemon.name}
-                className="relative z-10 w-full max-w-[360px] drop-shadow-[0_30px_40px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="relative z-10 w-full max-w-90 drop-shadow-[0_30px_40px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform duration-700 ease-out"
               />
             </div>
 
@@ -104,7 +104,7 @@ export default function PokemonDetailPage() {
                 { label: 'Altura', val: `${pokemon.height / 10}m`, icon: Ruler },
                 { label: 'Base XP', val: pokemon.base_experience, icon: Trophy },
               ].map((item, i) => (
-                <div key={i} className="bg-white border border-slate-100 p-5 rounded-[32px] flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+                <div key={i} className="bg-white border border-slate-100 p-5 rounded-4xl flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
                   <item.icon className="size-4 text-slate-300 mb-2" />
                   <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">{item.label}</span>
                   <span className="text-xl font-black text-slate-900 leading-tight">{item.val}</span>
