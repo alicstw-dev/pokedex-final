@@ -1,4 +1,3 @@
-import Footer from '@/components/layout/footer'
 import Navbar from '@/components/layout/navbar'
 import { Outlet } from 'react-router'
 
@@ -18,7 +17,6 @@ function AppLayout() {
       <main className="flex-1 flex flex-col">
         <Outlet />
       </main>
-
     </div>
   )
 }
