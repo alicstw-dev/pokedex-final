@@ -14,7 +14,7 @@ function AppLayout() {
 
         <Navbar.Links>
           <Navbar.Link to="/" text="Home" />
-          <Navbar.Link to="/pokemon" text="Pokédex" />
+          <Navbar.Link to="/pokedex" text="Pokédex" />
           <Navbar.Link to="/favorites" text="Favoritos" />
         </Navbar.Links>
 
