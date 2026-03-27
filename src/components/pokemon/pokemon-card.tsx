@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Star } from 'lucide-react'
 import { useNavigate } from 'react-router'
-// import { getAccessToken } from '@/features/storages/token.storage'
+import { getAccessToken } from '@/features/storages/token.storage'
 import {
   addFavorite,
   removeFavorite,
@@ -35,13 +35,11 @@ export default function PokemonCard({
     e.stopPropagation()
 
     // TRAVA DE LOGIN COMENTADA PARA TESTE:
-    /*
     const token = getAccessToken()
     if (!token) {
       navigate('/login')
       return
-    } 
-    */
+    }
 
     // Lógica que salva e remove de verdade
     if (favorited) {

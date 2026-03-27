@@ -9,7 +9,7 @@ function PublicLayout() {
 
   // // se já estiver logado, vai para pokedex
   // if (isAuthenticated) {
-  // 	return <Navigate to="/pokemon" replace />
+  // return <Navigate to="/pokedex" replace />
   // }
 
   return (

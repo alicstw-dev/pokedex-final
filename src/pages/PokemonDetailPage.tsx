@@ -16,6 +16,7 @@ import {
   addFavorite,
   removeFavorite,
 } from '@/features/storages/favorites.storage'
+import { getAccessToken } from '@/features/storages/token.storage'
 
 const TYPE_CONFIG: Record<string, { color: string; gradient: string }> = {
   fire: { color: 'bg-red-500', gradient: 'from-red-500 to-orange-400' },
@@ -76,13 +77,11 @@ export default function PokemonDetailPage() {
     if (!pokemon) return
 
     // A trava de login entraria aqui futuramente, igual no PokemonCard!
-    /*
     const token = getAccessToken()
     if (!token) {
       navigate('/login')
       return
-    } 
-    */
+    }
 
     if (favorited) {
       removeFavorite(pokemon.id)
