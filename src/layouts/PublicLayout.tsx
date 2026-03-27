@@ -16,13 +16,23 @@ function PublicLayout() {
       <Navbar>
         <Navbar.Brand to="/" />
 
+        <Navbar.Links>
+          <Navbar.Link to="/" text="Home" />
+          <Navbar.Link to="/pokemon" text="Pokédex" />
+          <Navbar.Link to="/favorites" text="Favoritos" />
+        </Navbar.Links>
+        
         <Navbar.Actions>
           <Button asChild>
-            <Link to="/login" className='text-muted'>Entrar</Link>
+            <Link to="/login" className="text-muted">
+              Entrar
+            </Link>
           </Button>
 
           <Button asChild>
-            <Link to="/register" className='text-muted'>Criar Conta</Link>
+            <Link to="/register" className="text-muted">
+              Criar Conta
+            </Link>
           </Button>
         </Navbar.Actions>
       </Navbar>
