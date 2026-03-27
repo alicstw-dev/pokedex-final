@@ -1,49 +1,62 @@
 import { createBrowserRouter } from 'react-router-dom'
+
+import PublicLayout from '@/layouts/PublicLayout'
+import AppLayout from '@/layouts/AppLayout'
+
 import HomePage from '@/pages/homepage/HomePage'
 import FavoritesPage from '@/pages/FavoritesPage'
 import PokemonPage from '@/pages/PokemonPage'
+import PokemonDetailPage from '@/pages/PokemonDetailPage'
 import RegisterPage from '@/pages/RegisterPage'
-import PokemonDetailPage from '@/pages/PokemonDetailPage' // Importe a nova página
-import App from '@/App'
 import LoginPage from '@/pages/LoginPage'
 
 export const router = createBrowserRouter([
+
+  // rotas públicas
   {
-    path: '/',
-    Component: App,
+    Component: PublicLayout,
     children: [
-      { 
-        index: true,
+
+      {
+        path: '/',
         Component: HomePage
       },
-      {
-        path: 'pokedex',
-        Component: PokemonPage,
-      },
-      {
-        path: 'pokedex/:id', // Rota dinâmica para detalhes
-        Component: PokemonDetailPage,
-      },
-      {
-        path: 'favorites',
-        Component: FavoritesPage,
-      },
-      {
-        path: 'register',
-        Component: RegisterPage,
-      },
-      {
-        path: 'login',
-        Component: LoginPage
-      }
-    ],
-  },
-])
 
-export const ROUTES = {
-  HOME: '/',
-  POKEDEX: '/pokedex',
-  FAVORITES: '/favorites',
-  REGISTER: '/register',
-  DETAILS: (id: string | number) => `/pokedex/${id}`, // Função auxiliar para navegação
-}
+      {
+        path: '/login',
+        Component: LoginPage
+      },
+
+      {
+        path: '/register',
+        Component: RegisterPage
+      }
+
+    ]
+  },
+
+
+  // rotas protegidas (precisa estar logado)
+  {
+    Component: AppLayout,
+    children: [
+
+      {
+        path: '/pokedex',
+        Component: PokemonPage
+      },
+
+      {
+        path: '/pokedex/:id',
+        Component: PokemonDetailPage
+      },
+
+      {
+        path: '/favorites',
+        Component: FavoritesPage
+      }
+
+    ]
+  }
+
+])

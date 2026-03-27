@@ -1,7 +1,7 @@
-import { ROUTES } from '@/app/routes'
+
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkles, Zap } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 function HeroSection() {
   return (
@@ -35,7 +35,7 @@ function HeroSection() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
 
             <Button size="lg" className="h-14 px-8 text-md font-bold group" asChild>
-              <Link to={ROUTES.POKEDEX}>
+              <Link to="/pokedex">
                 EXPLORAR POKÉDEX
                 <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
               </Link>
