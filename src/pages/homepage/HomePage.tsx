@@ -7,9 +7,7 @@ function HomePage() {
     <div className="min-h-screen flex flex-col">
       <main className="grow">
         <HeroSection />
-        <FeaturedPokemon />
-        
-        {/* Seção de Features Simples */}
+        <FeaturedPokemon />      
         <section className="py-20 bg-muted/50">
           <div className="container-main grid grid-cols-1 md:grid-cols-3 gap-10">
             <div className="text-center p-6">
