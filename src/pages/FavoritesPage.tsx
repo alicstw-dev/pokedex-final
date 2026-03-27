@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
-import Navbar from '@/components/layout/navbar'
+// import Navbar from '@/components/layout/navbar'
 import PokemonList from '@/components/pokemon/pokemon-list'
-//import { getAccessToken } from '@/features/storages/token.storage'
+import { getAccessToken } from '@/features/storages/token.storage'
 import {
   getFavorites,
   type FavoritePokemon,
@@ -19,6 +19,17 @@ const POKEMON_TYPES = [
   'Venenoso',
 ]
 
+// Nosso tradutor!
+const TYPE_TRANSLATOR: Record<string, string> = {
+  Água: 'water',
+  Fogo: 'fire',
+  Planta: 'grass',
+  Elétrico: 'electric',
+  Normal: 'normal',
+  Pedra: 'rock',
+  Venenoso: 'poison',
+}
+
 function FavoritesPage() {
   const navigate = useNavigate()
 
@@ -27,13 +38,11 @@ function FavoritesPage() {
   const [selectedType, setSelectedType] = useState('Todos')
 
   useEffect(() => {
-    /*
     const token = getAccessToken()
     if (!token) {
       navigate('/login')
       return
     }
-      */
 
     setTimeout(() => {
       const savedFavorites = getFavorites()
@@ -42,18 +51,23 @@ function FavoritesPage() {
     }, 500)
   }, [navigate])
 
+  // LÓGICA ATUALIZADA AQUI:
   const filteredFavorites =
     selectedType === 'Todos'
       ? favorites
-      : favorites.filter((pokemon) =>
-          pokemon.types?.some(
-            (type) => type.toLowerCase() === selectedType.toLowerCase(),
-          ),
-        )
+      : favorites.filter((pokemon) => {
+          // Pega a palavra em inglês correspondente ao botão clicado
+          const englishType = TYPE_TRANSLATOR[selectedType]
+
+          return pokemon.types?.some(
+            (type) => type.toLowerCase() === englishType,
+          )
+        })
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <Navbar children={undefined} />
+      {/* Como o AppLayout já tem Navbar, não precisamos chamar ela de novo aqui */}
+      {/* <Navbar children={undefined} /> */}
 
       <main className="grow container-main py-10">
         <div className="mb-10 text-center">

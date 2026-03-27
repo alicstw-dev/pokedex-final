@@ -8,7 +8,7 @@ function PublicLayout() {
 
   // // se já estiver logado, vai para pokedex
   // if (isAuthenticated) {
-  // 	return <Navigate to="/pokemon" replace />
+  // return <Navigate to="/pokedex" replace />
   // }
 
   return (
@@ -18,10 +18,10 @@ function PublicLayout() {
 
         <Navbar.Links>
           <Navbar.Link to="/" text="Home" />
-          <Navbar.Link to="/pokemon" text="Pokédex" />
+          <Navbar.Link to="/pokedex" text="Pokédex" />
           <Navbar.Link to="/favorites" text="Favoritos" />
         </Navbar.Links>
-        
+
         <Navbar.Actions>
           <Button asChild>
             <Link to="/login" className="text-muted">
