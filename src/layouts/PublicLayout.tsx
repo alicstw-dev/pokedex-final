@@ -1,7 +1,8 @@
 import Footer from '@/components/layout/footer'
 import Navbar from '@/components/layout/navbar'
 import { Button } from '@/components/ui/button'
-import { Link, Navigate, Outlet } from 'react-router'
+import { isLogged } from '@/features/storages/token.storage'
+import { Link, Outlet } from 'react-router'
 
 function PublicLayout() {
   // const { isAuthenticated } = useAuth()
@@ -23,18 +24,20 @@ function PublicLayout() {
         </Navbar.Links>
 
         <Navbar.Actions>
-          <Button asChild>
-            <Link to="/login" className="text-muted">
-              Entrar
-            </Link>
-          </Button>
 
-          <Button asChild>
-            <Link to="/register" className="text-muted">
-              Criar Conta
-            </Link>
-          </Button>
-        </Navbar.Actions>
+        {!isLogged && (
+          <>
+            <Button asChild>
+              <Link to="/login">Entrar</Link>
+            </Button>
+
+            <Button asChild>
+              <Link to="/register">Criar Conta</Link>
+            </Button>
+          </>
+        )}
+
+      </Navbar.Actions>
       </Navbar>
 
       <main className="flex-1 flex flex-col">

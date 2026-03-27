@@ -7,6 +7,7 @@ import {
   getFavorites,
   type FavoritePokemon,
 } from '@/features/storages/favorites.storage'
+import Navbar from '@/components/layout/navbar'
 
 const POKEMON_TYPES = [
   'Todos',
@@ -66,8 +67,19 @@ function FavoritesPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      {/* Como o AppLayout já tem Navbar, não precisamos chamar ela de novo aqui */}
-      {/* <Navbar children={undefined} /> */}
+      <Navbar>
+        <Navbar.Brand to="/pokedex" />
+
+        <Navbar.Links>
+          <Navbar.Link to="/home" text="Home" />
+          <Navbar.Link to="/pokedex" text="Pokédex" />
+          <Navbar.Link to="/favorites" text="Favoritos" />
+        </Navbar.Links>
+
+        <Navbar.Actions>
+          <Navbar.Search />
+        </Navbar.Actions>
+      </Navbar>
 
       <main className="grow container-main py-10">
         <div className="mb-10 text-center">
