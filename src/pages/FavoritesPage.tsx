@@ -16,7 +16,7 @@ function FavoritesPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
-      <Navbar />
+      <Navbar children={undefined} />
 
       <main className="grow container-main py-10">
         <div className="mb-10 text-center">
