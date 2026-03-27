@@ -4,7 +4,7 @@ import { clearAccessToken, setAccessToken } from "../storages/token.storage"
 
 export async function LoginUser(username: string, password: string): Promise<AuthResponse> {
   
-  const response = await http.post<AuthResponse>("/login", {
+  const response = await http.post<AuthResponse>("login", {
     username,
     password,
   })
