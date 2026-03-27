@@ -1,5 +1,5 @@
-import Footer from '@/components/layout/footer'
-import Navbar from '@/components/layout/navbar'
+import Footer from '@/components/shared/footer'
+import Navbar from '@/components/shared/navbar'
 import { Button } from '@/components/ui/button'
 import { isLogged } from '@/features/storages/token.storage'
 import { Link, Outlet } from 'react-router'
@@ -22,22 +22,20 @@ function PublicLayout() {
           <Navbar.Link to="/pokedex" text="Pokédex" />
           <Navbar.Link to="/favorites" text="Favoritos" />
         </Navbar.Links>
-        
+
         <Navbar.Actions>
+          {!isLogged && (
+            <>
+              <Button asChild>
+                <Link to="/login">Entrar</Link>
+              </Button>
 
-        {!isLogged && (
-          <>
-            <Button asChild>
-              <Link to="/login">Entrar</Link>
-            </Button>
-
-            <Button asChild>
-              <Link to="/register">Criar Conta</Link>
-            </Button>
-          </>
-        )}
-
-      </Navbar.Actions>
+              <Button asChild>
+                <Link to="/register">Criar Conta</Link>
+              </Button>
+            </>
+          )}
+        </Navbar.Actions>
       </Navbar>
 
       <main className="flex-1 flex flex-col">

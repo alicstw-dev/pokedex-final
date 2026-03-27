@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
-import Navbar from '@/components/layout/navbar'
+import Navbar from '@/components/shared/navbar'
 import PokemonList from '@/components/pokemon/pokemon-list'
 //import { getAccessToken } from '@/features/storages/token.storage'
 import {
