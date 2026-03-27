@@ -11,9 +11,12 @@ function getAccessToken(){
 function clearAccessToken(){
   localStorage.removeItem(KEY_TOKEN)
 }
+const token = getAccessToken()
+const isLogged = !!token
 
 export {
   setAccessToken,
   getAccessToken,
-  clearAccessToken
+  clearAccessToken,
+  isLogged
 }
